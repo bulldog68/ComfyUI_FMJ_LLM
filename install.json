@@ -1,6 +1,6 @@
 {
   "title": "FMJ-LLM",
-  "description": "dvanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV.",
+  "description": "advanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV.",
   "author": "bulldog68",
   "tags": ["prompt", "csv", "ollama", "FMJ"],
   "license": "MIT",
