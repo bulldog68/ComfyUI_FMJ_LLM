@@ -1,0 +1,12 @@
+{
+  "title": "FMJ-LLM",
+  "description": "dvanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV.",
+  "author": "bulldog68",
+  "tags": ["prompt", "csv", "ollama", "FMJ"],
+  "license": "MIT",
+  "website": "https://github.com/bulldog68/ComfyUI_FMJ_LLM",
+  "repository": "https://github.com/bulldog68/ComfyUI_FMJ_LLM",
+  "dependencies": [],
+  "install_type": "git",
+  "install_url": "https://github.com/TonPseudo/ComfyUI_FMJ_SP.git"
+}

@@ -1,0 +1,14 @@
+[project]
+name = "Comfyui_FMJ_LLM"
+description = "Advanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV."
+version = "1.0"
+license = { file = "LICENSE" }
+
+[project.urls]
+Repository = "https://github.com/bulldog68/ComfyUI_FMJ_LLM"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "bulldog63"
+DisplayName = "ComfyUI_FMJ_LLM"
+Icon = ""

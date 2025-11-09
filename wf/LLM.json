@@ -1,0 +1,649 @@
+{
+  "id": "3fe55b92-f16d-4ec4-84a0-c6c0523f4eb1",
+  "revision": 0,
+  "last_node_id": 51,
+  "last_link_id": 226,
+  "nodes": [
+    {
+      "id": 12,
+      "type": "LoadImage",
+      "pos": [
+        -8630,
+        -5840
+      ],
+      "size": [
+        281.54000091552734,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            211
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "FMJ-NORMAL_00184_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "OllamaUnloadModelsNode",
+      "pos": [
+        -8300,
+        -6270
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaUnloadModelsNode"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy showAnything",
+      "pos": [
+        -7950,
+        -6270
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "⚠️ Inactif. Activez 'unload_all_models' pour lancer le déchargement."
+      ]
+    },
+    {
+      "id": 39,
+      "type": "OllamaManagerNode",
+      "pos": [
+        -8300,
+        -6110
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "links": [
+            155,
+            212,
+            223
+          ]
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "links": [
+            158,
+            213,
+            224
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaManagerNode"
+      },
+      "widgets_values": [
+        "http://localhost:11434",
+        "qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy showAnything",
+      "pos": [
+        -7950,
+        -6110
+      ],
+      "size": [
+        290,
+        88
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 155
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy showAnything",
+      "pos": [
+        -7950,
+        -5970
+      ],
+      "size": [
+        290,
+        88
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 158
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "http://localhost:11434"
+      ]
+    },
+    {
+      "id": 49,
+      "type": "OllamaVisionNode",
+      "pos": [
+        -8300,
+        -5840
+      ],
+      "size": [
+        270,
+        246
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 211
+        },
+        {
+          "name": "model_name",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": 212
+        },
+        {
+          "name": "ollama_url",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "ollama_url"
+          },
+          "link": 213
+        }
+      ],
+      "outputs": [
+        {
+          "name": "description",
+          "type": "STRING",
+          "links": [
+            214,
+            222
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            216
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaVisionNode"
+      },
+      "widgets_values": [
+        "simple",
+        1024,
+        0.5,
+        1048784342927498,
+        "randomize",
+        "no",
+        "moondream",
+        "http://localhost:11434"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "easy showAnything",
+      "pos": [
+        -8300,
+        -5530
+      ],
+      "size": [
+        270,
+        100
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 216
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Type : simple\nModèle : qwen2.5vl:3b\n⏱️ 3.0s"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "easy showAnything",
+      "pos": [
+        -7950,
+        -5830
+      ],
+      "size": [
+        820,
+        400
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 214
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "Une femme élégante en robe rose et un homme en costume vert avec des questions se tiennent près d'une lanterne dans une scène nocturne."
+      ]
+    },
+    {
+      "id": 51,
+      "type": "OllamaPromptNode",
+      "pos": [
+        -8430,
+        -5350
+      ],
+      "size": [
+        400,
+        300
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": 222
+        },
+        {
+          "name": "model_name",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": 223
+        },
+        {
+          "name": "ollama_url",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "ollama_url"
+          },
+          "link": 224
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            225
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            226
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OllamaPromptNode"
+      },
+      "widgets_values": [
+        "une femme rousse en robe jaune",
+        "photo",
+        1024,
+        0.7,
+        693900578459395,
+        "randomize",
+        "no",
+        "qwen3",
+        "http://localhost:11434"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "easy showAnything",
+      "pos": [
+        -8430,
+        -4990
+      ],
+      "size": [
+        400,
+        100
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 226
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Style : photo\nModèle : qwen2.5vl:3b\n⏱️ 2.5s"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "easy showAnything",
+      "pos": [
+        -7950,
+        -5350
+      ],
+      "size": [
+        820,
+        460
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 225
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "masterpiece, hdr, finely intricate details:1.4, ultra high resolution, an award winning hyper realistic photography of:1.3, an elegant woman in a pink dress and a man in a green suit standing close to a lantern in a nocturnal scene. The woman has smooth, flawless skin with subtle shadows and highlights, the man has a well-defined, well-groomed beard and mustache. The texture of the woman's dress is soft and flowing, the man's suit is sleek and tailored. The lantern casts a warm, golden glow on the couple, creating a dramatic contrast with the cool blue tones of the night sky. The environment is a dark, cobblestone street with tall, ancient buildings and a grand archway in the background. The atmosphere is mysterious and captivating, with a sense of intrigue and romance. The photograph is taken with a prime lens at a focal length of 85mm, capturing the intimate moment between the two individuals. The style is classical and romantic, with a focus on the interplay of light and shadow, and the use of the lantern as a focal point. The image is rendered with hyper-detailed textures and lighting, resulting in a photorealistic masterpiece."
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      3,
+      0,
+      5,
+      0,
+      "*"
+    ],
+    [
+      155,
+      39,
+      0,
+      6,
+      0,
+      "*"
+    ],
+    [
+      158,
+      39,
+      1,
+      7,
+      0,
+      "*"
+    ],
+    [
+      211,
+      12,
+      0,
+      49,
+      0,
+      "IMAGE"
+    ],
+    [
+      212,
+      39,
+      0,
+      49,
+      1,
+      "STRING"
+    ],
+    [
+      213,
+      39,
+      1,
+      49,
+      2,
+      "STRING"
+    ],
+    [
+      214,
+      49,
+      0,
+      8,
+      0,
+      "*"
+    ],
+    [
+      216,
+      49,
+      1,
+      9,
+      0,
+      "*"
+    ],
+    [
+      222,
+      49,
+      0,
+      51,
+      0,
+      "STRING"
+    ],
+    [
+      223,
+      39,
+      0,
+      51,
+      1,
+      "STRING"
+    ],
+    [
+      224,
+      39,
+      1,
+      51,
+      2,
+      "STRING"
+    ],
+    [
+      225,
+      51,
+      0,
+      10,
+      0,
+      "*"
+    ],
+    [
+      226,
+      51,
+      1,
+      11,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        9281.937382610577,
+        6168.264915395594
+      ]
+    },
+    "frontendVersion": "1.28.8"
+  },
+  "version": 0.4
+}
