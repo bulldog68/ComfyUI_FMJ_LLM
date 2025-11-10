@@ -65,15 +65,4 @@ Ce pack de nœuds personnalisés permet d’**intégrer Ollama** (modèles comme
 
 ---
 
-## 📥 Installation
-
-1. Clonez le dépôt dans `ComfyUI/custom_nodes/` :
-   ```bash
-   git clone https://github.com/VOTRE-NOM/ComfyUI_FMJ_LLM.git
-   ```
-2. Redémarrez ComfyUI
-3. Trouvez les nœuds dans la catégorie **`FMJ`**
-
----
-
 > 💡 **Tout tourne en local.** Vos images, vos prompts, vos données restent **sur votre machine**.
