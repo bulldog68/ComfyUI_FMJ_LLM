@@ -3,6 +3,7 @@ name = "Comfyui_FMJ_LLM"
 description = "Advanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV."
 version = "1.0"
 license = { file = "LICENSE" }
+dependencies = ["ollama"]
 
 [project.urls]
 Repository = "https://github.com/bulldog68/ComfyUI_FMJ_LLM"

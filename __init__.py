@@ -1,20 +1,20 @@
 # __init__.py
 
-from .ollama_manager import OllamaManagerNode
-from .ollama_unload_models import OllamaUnloadModelsNode
-from .ollama_prompt import OllamaPromptNode
-from .ollama_vision import OllamaVisionNode
+from .ollama_manager import FMJLlmConfigNode
+from .ollama_unload import FMJUnloadAllLLM
+from .ollama_prompt import FMJOllamaPromptGenerator
+from .ollama_vision import FMJLlmOllamaVision
 
 NODE_CLASS_MAPPINGS = {
-    "OllamaManagerNode": OllamaManagerNode,
-    "OllamaUnloadModelsNode": OllamaUnloadModelsNode,
-    "OllamaPromptNode": OllamaPromptNode,
-    "OllamaVisionNode": OllamaVisionNode
+    "FMJLlmConfigNode": FMJLlmConfigNode,
+    "FMJUnloadAllLLM": FMJUnloadAllLLM,
+    "FMJOllamaPromptGenerator": FMJOllamaPromptGenerator,
+    "FMJLlmOllamaVision": FMJLlmOllamaVision,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "OllamaManagerNode": "⚙️ Ollama Config",
-    "OllamaUnloadModelsNode": "🧹 Ollama Unload All Models",
-    "OllamaPromptNode": "🦙 Ollama Text Generator",
-    "OllamaVisionNode": "👁️ Ollama Vision"
+    "FMJLlmConfigNode": "⚙️ FMJ Llm Config",
+    "FMJUnloadAllLLM": "🧹 FMJ Unload All LLM",
+    "FMJOllamaPromptGenerator": "🦙FMJ Ollama Prompt Generator",
+    "FMJLlmOllamaVision": "👁️ FMJ Llm Ollama Vision",
 }
