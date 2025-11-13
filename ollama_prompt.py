@@ -40,10 +40,10 @@ class FMJOllamaPromptGenerator:
                 "model_name": ("STRING", {"default": "qwen3:2b"}),
                 "ollama_url": ("STRING", {"default": "http://localhost:11434"}),
                 "max_tokens": ("INT", {
-                    "default": 10000,
+                    "default": 512,
                     "min": 1,
-                    "max": 10000,
-                    "tooltip": "Nombre max de tokens à générer (10000 pour prompts longs)."
+                    "max": 16384,
+                    "tooltip": "Nombre max de tokens à générer (16384 pour prompts longs)."
                 }),
                 "temperature": ("FLOAT", {"default": 0.7, "min": 0.0, "max": 10.0, "step": 0.1}),
                 "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
