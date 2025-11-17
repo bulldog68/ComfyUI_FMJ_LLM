@@ -1,7 +1,7 @@
 {
   "node": {
-    "id": "ComfyUI_FMJ_LLM",
-    "name": "ComfyUI_FMJ_LLM",
+    "id": ""ComfyUI_FMJ_LLM"",
+    "name": ""ComfyUI_FMJ_LLM"",
     "description": "Advanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV.",
     "license": { "file": "LICENSE" },
     "repository": "https://github.com/bulldog68/ComfyUI_FMJ_LLM",
