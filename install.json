@@ -1,7 +1,9 @@
 {
-  "title": "FMJ-LLM",
+  "title": "ComfyUI_FMJ_LLM",
   "description": "dvanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV.",
   "author": "bulldog68",
+  "id": "ComfyUI_FMJ_LLM",
+  "name": "ComfyUI_FMJ_LLM",
   "tags": ["prompt", "csv", "ollama", "FMJ"],
   "license": "MIT",
   "website": "https://github.com/bulldog68/ComfyUI_FMJ_LLM",
