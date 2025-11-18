@@ -31,7 +31,7 @@ class FMJLlmConfigNode:
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("model_name", "ollama_url")
     FUNCTION = "output_config"
-    CATEGORY = "FMJ"
+    CATEGORY = "🌀FMJ"
 
     def output_config(self, ollama_url, selected_model):
         return (selected_model, ollama_url)

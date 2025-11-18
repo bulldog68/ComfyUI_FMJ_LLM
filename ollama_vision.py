@@ -72,7 +72,7 @@ class FMJLlmOllamaVision:
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("description", "debug_info")
     FUNCTION = "describe_image"
-    CATEGORY = "FMJ"
+    CATEGORY = "🌀FMJ"
 
     def describe_image(self, image, description_type, model_name, ollama_url, max_tokens, temperature, seed, keep_alive):
         prompts = load_vision_prompts()

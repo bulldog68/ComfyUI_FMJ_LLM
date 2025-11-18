@@ -59,7 +59,7 @@ class FMJOllamaPromptGenerator:
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("response", "debug_info")
     FUNCTION = "generate"
-    CATEGORY = "FMJ"
+    CATEGORY = "🌀FMJ"
 
     def generate(self, text, prompt_style, model_name, ollama_url, max_tokens, temperature, seed, keep_alive):
         # Charger les prompts

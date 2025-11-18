@@ -15,7 +15,7 @@ class FMJUnloadAllLLM:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("status",)
     FUNCTION = "unload_all"
-    CATEGORY = "FMJ"
+    CATEGORY = "🌀FMJ"
 
     def unload_all(self, trigger):
         OLLAMA_URL = "http://localhost:11434"  # URL fixe
