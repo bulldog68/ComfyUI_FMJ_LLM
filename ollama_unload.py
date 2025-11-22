@@ -1,4 +1,3 @@
-# ollama_unload.py
 import requests
 
 class FMJUnloadAllLLM:
@@ -24,11 +23,36 @@ class FMJUnloadAllLLM:
             return ("⚠️ Déchargement non déclenché (trigger = False).",)
         
         try:
-            requests.post(
-                f"{OLLAMA_URL}/api/generate",
-                json={"model": "dummy", "keep_alive": 0},
-                timeout=5
-            )
-            return ("✅ Tous les modèles Ollama ont été déchargés.",)
+            # Étape 1 : Récupérer les modèles actuellement chargés
+            response = requests.get(f"{OLLAMA_URL}/api/ps", timeout=10)
+            response.raise_for_status()
+            models_info = response.json()
+
+            loaded_models = models_info.get("models", [])
+            if not loaded_models:
+                return ("✅ Aucun modèle chargé à décharger.",)
+
+            # Étape 2 : Décharger chaque modèle actif
+            unloaded_models = []
+            for model_info in loaded_models:
+                model_name = model_info["name"]
+                try:
+                    # On fait une requête "vide" avec keep_alive: 0 pour forcer le déchargement
+                    requests.post(
+                        f"{OLLAMA_URL}/api/generate",
+                        json={"model": model_name, "keep_alive": 0},
+                        timeout=5
+                    )
+                    unloaded_models.append(model_name)
+                except Exception as e:
+                    print(f"[Erreur] Impossible de décharger {model_name}: {e}")
+
+            if unloaded_models:
+                return (f"✅ Modèles déchargés : {', '.join(unloaded_models)}",)
+            else:
+                return ("⚠️ Aucun modèle n’a pu être déchargé.",)
+
+        except requests.exceptions.RequestException as e:
+            return (f"❌ Erreur de communication avec Ollama : {str(e)}",)
         except Exception as e:
-            return (f"❌ Erreur lors du déchargement : {str(e)}",)
+            return (f"❌ Erreur inattendue : {str(e)}",)

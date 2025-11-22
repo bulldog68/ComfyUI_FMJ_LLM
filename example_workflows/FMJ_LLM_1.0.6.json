@@ -1,0 +1,649 @@
+{
+  "id": "3fe55b92-f16d-4ec4-84a0-c6c0523f4eb1",
+  "revision": 0,
+  "last_node_id": 73,
+  "last_link_id": 295,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "easy showAnything",
+      "pos": [
+        -7980,
+        -5330
+      ],
+      "size": [
+        800,
+        190
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 294
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "\"A woman in a elegant rose dress and purple gloves stands confidently on a cobblestone street in an urban night scene, her châtain wig adorned with a violet paper flower and a white necklace. She holds the hand of a smaller woman in a green suit with black questionnaires on her clothes and a violet hat, who is also standing. In the background, a creature with an everted head and horns, resembling a demon or fantastical creature, stands with hands on hips, observing the two. The scene is set against an urban backdrop with skyscrapers, street lamps, and twinkling stars in the sky. The atmosphere is industrial, with metal pipes and structures, and the scene is illuminated by a street lamp on the left and a desk lamp on the right. The image is vibrant and detailed, focusing on the attire of the characters and the elements of the environment. — Style: Storm Thorgerson conceptual photography, minimalist realism, 35mm film grain, muted palette, shot on Hasselblad, no digital effects, album cover aesthetic\""
+      ]
+    },
+    {
+      "id": 11,
+      "type": "easy showAnything",
+      "pos": [
+        -7980,
+        -5080
+      ],
+      "size": [
+        410,
+        100
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 295
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Prompt généré\nStyle : pink\nModèle : qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "easy showAnything",
+      "pos": [
+        -7970,
+        -5500
+      ],
+      "size": [
+        270,
+        100
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 290
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Vision réussie\nType : composition\nModèle : qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "easy showAnything",
+      "pos": [
+        -7970,
+        -5720
+      ],
+      "size": [
+        800,
+        160
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 288
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "Cette image est une illustration numérique représentant trois personnages dans un environnement urbain nocturne. Le personnage principal est une femme élégante habillée en robe rose avec des gants de couleur violette. Elle porte une perruque châtain avec une fleur en papier violet dans ses cheveux et un collier blanc. Elle est debout, tenant la main d'une femme plus jeune et plus petite, qui est habillée en costume vert avec des questionnaires noirs sur ses vêtements et un chapeau de couleur violette. Cette deuxième femme a des cheveux colorés et est également debout.\n\nEn arrière-plan, il y a un personnage à la tête échancrée et des cornes, qui semble être un démon ou une créature fantastique. Le personnage est debout, avec les mains sur les hanches, observant les deux autres.\n\nL'arrière-plan montre un paysage urbain avec des gratte-ciel, des lampadaires et des étoiles scintillantes dans le ciel. La scène est éclairée par une lampe de rue à la gauche de la image et un autre lampe de bureau à droite. Il y a aussi des管道s et des structures industrielles en métal, soulignant l'atmosphère de la scène.\n\nL'ensemble de l'image est très coloré et détaillé, avec une attention particulière aux détails dans la tenue des personnages et dans les éléments de l'environnement."
+      ]
+    },
+    {
+      "id": 12,
+      "type": "LoadImage",
+      "pos": [
+        -8630,
+        -5720
+      ],
+      "size": [
+        281.5400085449219,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            285
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "FMJ-NORMAL_00184_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 71,
+      "type": "FMJLlmConfigNode",
+      "pos": [
+        -8320,
+        -5880
+      ],
+      "size": [
+        320,
+        102
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "links": [
+            279,
+            286,
+            292
+          ]
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "links": [
+            282,
+            287,
+            293
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "1872ef25a89b965a9b2e6b367d85254ec16974e3",
+        "Node name for S&R": "FMJLlmConfigNode"
+      },
+      "widgets_values": [
+        "http://localhost:11434",
+        "qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy showAnything",
+      "pos": [
+        -7970,
+        -5880
+      ],
+      "size": [
+        290,
+        100
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 282
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "http://localhost:11434"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy showAnything",
+      "pos": [
+        -7970,
+        -6020
+      ],
+      "size": [
+        290,
+        88
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 279
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 72,
+      "type": "FMJLlmOllamaVision",
+      "pos": [
+        -8320,
+        -5720
+      ],
+      "size": [
+        320,
+        246
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 285
+        },
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": 286
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "widget": {
+            "name": "ollama_url"
+          },
+          "link": 287
+        }
+      ],
+      "outputs": [
+        {
+          "name": "description",
+          "type": "STRING",
+          "links": [
+            288,
+            291
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            290
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "1872ef25a89b965a9b2e6b367d85254ec16974e3",
+        "Node name for S&R": "FMJLlmOllamaVision"
+      },
+      "widgets_values": [
+        "composition",
+        "qwen3-vl:2b",
+        "http://localhost:11434",
+        512,
+        0.7,
+        823518628217486,
+        "randomize",
+        -1
+      ]
+    },
+    {
+      "id": 73,
+      "type": "FMJOllamaPromptGenerator",
+      "pos": [
+        -8320,
+        -5330
+      ],
+      "size": [
+        320,
+        246
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 291
+        },
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": 292
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "widget": {
+            "name": "ollama_url"
+          },
+          "link": 293
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            294
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            295
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "1872ef25a89b965a9b2e6b367d85254ec16974e3",
+        "Node name for S&R": "FMJOllamaPromptGenerator"
+      },
+      "widgets_values": [
+        "pink",
+        "qwen3:2b",
+        "http://localhost:11434",
+        512,
+        0.7,
+        829412707232226,
+        "randomize",
+        -1
+      ]
+    },
+    {
+      "id": 5,
+      "type": "easy showAnything",
+      "pos": [
+        -7970,
+        -6160
+      ],
+      "size": [
+        290,
+        90
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 278
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "76b5896f089d5b4f7619559cf5f7fc0560e3dc40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Modèles déchargés : qwen2.5vl:3b"
+      ]
+    },
+    {
+      "id": 70,
+      "type": "FMJUnloadAllLLM",
+      "pos": [
+        -8310,
+        -6160
+      ],
+      "size": [
+        310,
+        60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": [
+            278
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "1872ef25a89b965a9b2e6b367d85254ec16974e3",
+        "Node name for S&R": "FMJUnloadAllLLM"
+      },
+      "widgets_values": [
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      278,
+      70,
+      0,
+      5,
+      0,
+      "*"
+    ],
+    [
+      279,
+      71,
+      0,
+      6,
+      0,
+      "*"
+    ],
+    [
+      282,
+      71,
+      1,
+      7,
+      0,
+      "*"
+    ],
+    [
+      285,
+      12,
+      0,
+      72,
+      0,
+      "IMAGE"
+    ],
+    [
+      286,
+      71,
+      0,
+      72,
+      1,
+      "STRING"
+    ],
+    [
+      287,
+      71,
+      1,
+      72,
+      2,
+      "STRING"
+    ],
+    [
+      288,
+      72,
+      0,
+      8,
+      0,
+      "*"
+    ],
+    [
+      290,
+      72,
+      1,
+      9,
+      0,
+      "*"
+    ],
+    [
+      291,
+      72,
+      0,
+      73,
+      0,
+      "STRING"
+    ],
+    [
+      292,
+      71,
+      0,
+      73,
+      1,
+      "STRING"
+    ],
+    [
+      293,
+      71,
+      1,
+      73,
+      2,
+      "STRING"
+    ],
+    [
+      294,
+      73,
+      0,
+      10,
+      0,
+      "*"
+    ],
+    [
+      295,
+      73,
+      1,
+      11,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        9252.717841060894,
+        6256.07665245614
+      ]
+    },
+    "frontendVersion": "1.28.8"
+  },
+  "version": 0.4
+}
