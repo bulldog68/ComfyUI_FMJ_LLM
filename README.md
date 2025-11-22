@@ -66,3 +66,4 @@ Ce pack de nœuds personnalisés permet d’**intégrer Ollama** (modèles comme
 ---
 
 > 💡 **Tout tourne en local.** Vos images, vos prompts, vos données restent **sur votre machine**.
+> 💡 **Installer Ollama avant le node. https://ollama.com/
