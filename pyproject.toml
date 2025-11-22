@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI_FMJ_LLM"
 description = "Advanced nodes for interaction with Olama (text, vision, image editing), with dynamic management of prompts via CSV."
-version = "1.0.5"
+version = "1.0.6"
 license = { file = "LICENSE" }
 dependencies = ["ollama"]
 
