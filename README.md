@@ -54,14 +54,7 @@ Ce pack de nœuds personnalisés permet d’**intégrer Ollama** (modèles comme
 
 ## 📦 Compatibilité
 
-- ✅ **Ollama ≥ v0.12** (testé sur Linux, Windows)
-
-## 🚀 Exemples d’usage
-
-- **Décrivez une image** → générer un prompt Stable Diffusion fidèle  
-- **Améliorez un prompt simple** → version ultra-détaillée prête pour l’image  
-- **Nettoyez la mémoire** → évitez les conflits entre `moondream` et `qwen3-vl`  
-- **Chaînez avec `FMJ-speed-Prompt`** → mélangez CSV + IA générative
+- ✅ **Ollama ≥ v0.13** (testé sur Linux, Windows)
 
 ---
 
