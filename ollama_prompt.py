@@ -53,6 +53,9 @@ class FMJOllamaPromptGenerator:
                     "max": 120,
                     "tooltip": "Durée (min) de mise en cache du modèle. -1=persistant, 0=décharger immédiatement."
                 }),
+            },
+            "optional": {
+                "override_prompt": ("STRING", {"multiline": True, "default": ""}),
             }
         }
 
@@ -61,10 +64,16 @@ class FMJOllamaPromptGenerator:
     FUNCTION = "generate"
     CATEGORY = "🌀FMJ"
 
-    def generate(self, text, prompt_style, model_name, ollama_url, max_tokens, temperature, seed, keep_alive):
+    def generate(self, text, prompt_style, model_name, ollama_url, max_tokens, temperature, seed, keep_alive, override_prompt=None):
         # Charger les prompts
         PROMPT_STYLES = load_prompts_from_csv()
-        system_instruction = PROMPT_STYLES.get(prompt_style)
+        
+        # Utiliser override_prompt s'il est fourni et non vide, sinon utiliser le CSV
+        if override_prompt and override_prompt.strip():
+            system_instruction = override_prompt.strip()
+        else:
+            system_instruction = PROMPT_STYLES.get(prompt_style)
+            
         if system_instruction is None:
             error_msg = f"❌ Style '{prompt_style}' introuvable. Vérifiez le dossier 'csv/'."
             return (error_msg, error_msg)
