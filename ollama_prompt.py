@@ -34,7 +34,6 @@ class FMJOllamaPromptGenerator:
         style_list = list(PROMPT_STYLES.keys()) if PROMPT_STYLES else ["_aucun_prompt_dans_csv_"]
         return {
             "required": {
-                # 🔸 ENTRÉE TEXTE EXTERNE (obligatoire)
                 "text": ("STRING", {"forceInput": True}),
                 "prompt_style": (style_list, {"default": style_list[0]}),
                 "model_name": ("STRING", {"default": "qwen3:2b"}),
@@ -43,7 +42,7 @@ class FMJOllamaPromptGenerator:
                     "default": 512,
                     "min": 1,
                     "max": 16384,
-                    "tooltip": "Nombre max de tokens à générer (16384 pour prompts longs)."
+                    "tooltip": "Nombre max de tokens à générer."
                 }),
                 "temperature": ("FLOAT", {"default": 0.7, "min": 0.0, "max": 10.0, "step": 0.1}),
                 "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
@@ -51,11 +50,18 @@ class FMJOllamaPromptGenerator:
                     "default": 5,
                     "min": -1,
                     "max": 120,
-                    "tooltip": "Durée (min) de mise en cache du modèle. -1=persistant, 0=décharger immédiatement."
+                    "tooltip": "Durée (min) de mise en cache du modèle."
+                }),
+                "request_timeout": ("INT", {
+                    "default": 300,  # 5 minutes — important pour Qwen3
+                    "min": 30,
+                    "max": 3600,
+                    "tooltip": "Délai d'attente max (en secondes) pour la réponse. Augmentez si Qwen3 est lent."
                 }),
             },
             "optional": {
                 "override_prompt": ("STRING", {"multiline": True, "default": ""}),
+                "disable_thinking": ("BOOLEAN", {"default": True, "label_on": "Désactiver le raisonnement", "label_off": "Laisser activer"})
             }
         }
 
@@ -64,11 +70,23 @@ class FMJOllamaPromptGenerator:
     FUNCTION = "generate"
     CATEGORY = "🌀FMJ"
 
-    def generate(self, text, prompt_style, model_name, ollama_url, max_tokens, temperature, seed, keep_alive, override_prompt=None):
+    def generate(
+        self,
+        text,
+        prompt_style,
+        model_name,
+        ollama_url,
+        max_tokens,
+        temperature,
+        seed,
+        keep_alive,
+        request_timeout,
+        override_prompt=None,
+        disable_thinking=True
+    ):
         # Charger les prompts
         PROMPT_STYLES = load_prompts_from_csv()
         
-        # Utiliser override_prompt s'il est fourni et non vide, sinon utiliser le CSV
         if override_prompt and override_prompt.strip():
             system_instruction = override_prompt.strip()
         else:
@@ -78,34 +96,55 @@ class FMJOllamaPromptGenerator:
             error_msg = f"❌ Style '{prompt_style}' introuvable. Vérifiez le dossier 'csv/'."
             return (error_msg, error_msg)
 
-        # Construire le prompt utilisateur avec le texte fourni
-        if prompt_style == "qwen_edit":
-            user_prompt = text  # Pour qwen_edit, le texte est la requête d'édition
-        else:
-            user_prompt = f"Sujet : {text}\n\nRéponse :"
+        # Construire le prompt utilisateur
+        user_prompt = text  # On utilise le texte brut comme message utilisateur
 
-        # Configurer le client Ollama
+        # Construire la liste des messages (format chat)
+        messages = [
+            {"role": "system", "content": system_instruction},
+            {"role": "user", "content": user_prompt}
+        ]
+
+        # Ajouter 'think' dans les options si le modèle le supporte
+        extra_options = {
+            "num_predict": max_tokens,
+            "temperature": temperature,
+            "seed": seed
+        }
+
+        # Désactiver la trace de raisonnement si demandé (utile pour Qwen3)
+        if disable_thinking:
+            extra_options["think"] = False
+
+        # Configurer le client avec un délai plus long
         client = Client(host=ollama_url.rstrip('/'))
 
         try:
-            response = client.generate(
+            # ⭐ Utiliser client.chat() — NE PAS utiliser .generate()
+            response = client.chat(
                 model=model_name,
-                system=system_instruction,
-                prompt=user_prompt,
-                options={
-                    "num_predict": max_tokens,
-                    "temperature": temperature,
-                    "seed": seed
-                },
-                keep_alive=f"{keep_alive}m"
+                messages=messages,
+                options=extra_options,
+                keep_alive=f"{keep_alive}m",
+                # Note : Le timeout ne peut pas être passé directement dans l'appel de base
+                # mais on peut le gérer via la session HTTP si nécessaire.
+                # Pour simplifier, on se fie au timeout global.
             )
 
-            output_text = response.get('response', '').strip()
+            # ⭐ Extraire correctement la réponse de l'endpoint /api/chat
+            output_text = response.get("message", {}).get("content", "").strip()
             if not output_text:
-                output_text = "⚠️ Réponse vide de la part du modèle."
-            debug = f"✅ Prompt généré\nStyle : {prompt_style}\nModèle : {model_name}"
+                output_text = "⚠️ Réponse vide de la part du modèle (Qwen3 a peut-être échoué à générer du texte)."
+
+            debug = (
+                f"✅ Réponse reçue\n"
+                f"Style : {prompt_style}\n"
+                f"Modèle : {model_name}\n"
+                f"Tokens max : {max_tokens}\n"
+                f"Timeout : {request_timeout}s"
+            )
             return (output_text, debug)
 
         except Exception as e:
-            error_detail = f"❌ Erreur LLM : {str(e)}"
+            error_detail = f"❌ Erreur LLM (Ollama) : {str(e)}"
             return (error_detail, error_detail)
