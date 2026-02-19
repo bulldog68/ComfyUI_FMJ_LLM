@@ -1,0 +1,548 @@
+{
+  "id": "4ccf5309-d2a0-497e-9854-fbccf8b8fea8",
+  "revision": 0,
+  "last_node_id": 15,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "FMJLlmOllamaVision",
+      "pos": [
+        -350,
+        -400
+      ],
+      "size": [
+        400,
+        348
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 10
+        },
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": 11
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "widget": {
+            "name": "ollama_url"
+          },
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "description",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "bf0ec79be6c590d8d15909e31ac72657fce5c96b",
+        "Node name for S&R": "FMJLlmOllamaVision"
+      },
+      "widgets_values": [
+        "characters",
+        "qwen3-vl:2b",
+        "http://localhost:11434",
+        512,
+        0.7,
+        282280493010468,
+        "randomize",
+        5,
+        300,
+        "",
+        true
+      ]
+    },
+    {
+      "id": 6,
+      "type": "FMJOllamaPromptGenerator",
+      "pos": [
+        640,
+        -400
+      ],
+      "size": [
+        400,
+        402
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "widget": {
+            "name": "model_name"
+          },
+          "link": 3
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "widget": {
+            "name": "ollama_url"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "response",
+          "type": "STRING",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "bf0ec79be6c590d8d15909e31ac72657fce5c96b",
+        "Node name for S&R": "FMJOllamaPromptGenerator"
+      },
+      "widgets_values": [
+        "Zimage",
+        "album",
+        "qwen3:2b",
+        "http://localhost:11434",
+        512,
+        0.7,
+        348333778536363,
+        "randomize",
+        5,
+        300,
+        "",
+        true
+      ]
+    },
+    {
+      "id": 8,
+      "type": "FMJLlmConfigNode",
+      "pos": [
+        -350,
+        -580
+      ],
+      "size": [
+        400,
+        110
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model_name",
+          "type": "STRING",
+          "links": [
+            3,
+            11
+          ]
+        },
+        {
+          "name": "ollama_url",
+          "type": "STRING",
+          "links": [
+            4,
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "bf0ec79be6c590d8d15909e31ac72657fce5c96b",
+        "Node name for S&R": "FMJLlmConfigNode"
+      },
+      "widgets_values": [
+        "http://localhost:11434",
+        "ministral-3:3b"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "easy showAnything",
+      "pos": [
+        1080,
+        -400
+      ],
+      "size": [
+        510,
+        340
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "b11c63487243d183a967261bdf019c5afcec2cf7",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "---\n**Concept : *\"Industrie Électro-Lytique\"**\n*(Fusion : Steinweiss + Hipgnosis + Reid Miles + Peter Blake)*\n\n---\n\n**Palette & Atmosphère :**\n- **Couleurs primaires saturées et contrastées** : Fond vert électrique (teinte toxique, presque fluorescente) ou bleu électrique foncé, avec des accents **noir et rouge sang** (effet \"virelangue des machines rouillées\"), et des touches de **jaune poudré** (effet chimique) ou **rose pâle** (désinhibition).\n- **Éclairage onirique** : Joues de lumière artificielle (comme dans les usines des années 50, mais avec des ombres étirées et distordues par des lentes focus Hipgnosis), avec des reflets métalliques (comme sur des surfaces lisses recouvertes de graisse).\n- **Ambiance** : À la fois **industrielle et psychédélique**, avec une tension entre l’ordre mécanique (Steinweiss) et la déréalisation (Hipgnosis). Un mélange de **souffle de machine à vapeur** et de **vibration électro** (comme un son d’usine modulé par des effets de synthétiseur années 70).\n\n---\n\n**Composition visuelle :**\n- **Cadre cinétique** : Une **grande bande horizontale en forme de vis** (comme un filtre optique) divise la pochette en deux parties, avec un **point focal central** où le travailleur est encadré par une **juxtaposition de mécanismes** (engrenages, rouages, tuyaux de vapeur) qui semblent **décalés** (effet de distorsion surréaliste).\n  - *À gauche* : Une **illustration Steinweiss** d’un ouvrier des années 40-50 (style Alex Steinweiss avec des contours fluides et des couleurs vives), mais **dépourvu d’émotion**, son visage figé dans une expression neutre, vêtu d’un uniforme à rayures. Fond texturé (comme du papier machine), avec des motifs géométriques (grilles industrielles).\n  - *À droite* : Une **photographie surréaliste** (style Hipgnosis) du même ouvrier, mais **dans une usine"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "easy showAnything",
+      "pos": [
+        1080,
+        0
+      ],
+      "size": [
+        510,
+        120
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "b11c63487243d183a967261bdf019c5afcec2cf7",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Réponse reçue\nStyle : album\nModèle : ministral-3:3b\nTokens max : 512\nTimeout : 300s"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "FMJUnloadAllLLM",
+      "pos": [
+        640,
+        70
+      ],
+      "size": [
+        400,
+        60
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_LLM",
+        "ver": "bf0ec79be6c590d8d15909e31ac72657fce5c96b",
+        "Node name for S&R": "FMJUnloadAllLLM"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 12,
+      "type": "easy showAnything",
+      "pos": [
+        640,
+        190
+      ],
+      "size": [
+        400,
+        90
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "b11c63487243d183a967261bdf019c5afcec2cf7",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "⚠️ Déchargement non déclenché (trigger = False)."
+      ]
+    },
+    {
+      "id": 13,
+      "type": "easy showAnything",
+      "pos": [
+        90,
+        -400
+      ],
+      "size": [
+        510,
+        340
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "b11c63487243d183a967261bdf019c5afcec2cf7",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "Dans cette image, il s'agit d’une seule personne :\n\n**Apparence :**\n- **Visage et Cheveux :** Elle a une peau teintée, un visage anguleux et une expression intense. Elle a les cheveux rasés sur le dessus de la tête, laissant une mèche blonde visible près de l'oreille.\n\n**Vêtements :**\n- Elle porte une tenue audacieuse et théâtrale en noir, évoquant un style vintage inspiré de la mode années 1920 à 1930.\n- Le haut est un bustier noir avec des détails en dentelle noire et des plis sur les épaules, laissant les épaules et les bras en plein visible.\n- Le bas de la tenue est une robe courte en fourrure noire, avec une coupe qui s'élargit vers le bas, évoquant une sorte de jupe longue mais décolletée et avec une coupe très dramatique.\n\n**Expression :**\n- Elle porte une expression dramatique, presque théâtrale, avec les lèvres légèrement ouvertes et un regard intense et concentré.\n\n**Posture :**\n- Elle tient ses bras légèrement écartés et posés sur ses hanches, avec une posture légèrement penchée vers la droite, donnant un air de défi ou de charisme captivant.\n- Ses jambes sont légèrement fléchies et ses pieds sont légèrement tournés vers l’extérieur, renforçant cette posture dynamique et théâtrale. Sa silhouette contraste bien avec le fond sombre et lumineux, accentuant son impact visuel."
+      ]
+    },
+    {
+      "id": 14,
+      "type": "easy showAnything",
+      "pos": [
+        90,
+        0
+      ],
+      "size": [
+        510,
+        100
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "b11c63487243d183a967261bdf019c5afcec2cf7",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "✅ Vision réussie\nType : characters\nModèle : ministral-3:3b\nTimeout : 300s"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": [
+        -680,
+        -400
+      ],
+      "size": [
+        282.83333587646484,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            10
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "fmj-11-NORMAL_20260216_122324_00.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      8,
+      0,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      4,
+      8,
+      1,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      5,
+      6,
+      0,
+      9,
+      0,
+      "STRING"
+    ],
+    [
+      6,
+      6,
+      1,
+      10,
+      0,
+      "STRING"
+    ],
+    [
+      7,
+      11,
+      0,
+      12,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      1,
+      0,
+      13,
+      0,
+      "STRING"
+    ],
+    [
+      9,
+      1,
+      1,
+      14,
+      0,
+      "STRING"
+    ],
+    [
+      10,
+      15,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      8,
+      0,
+      1,
+      1,
+      "STRING"
+    ],
+    [
+      12,
+      8,
+      1,
+      1,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        812.5,
+        725.625
+      ]
+    },
+    "frontendVersion": "1.39.14"
+  },
+  "version": 0.4
+}

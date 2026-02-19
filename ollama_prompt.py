@@ -33,8 +33,12 @@ class FMJOllamaPromptGenerator:
         PROMPT_STYLES = load_prompts_from_csv()
         style_list = list(PROMPT_STYLES.keys()) if PROMPT_STYLES else ["_aucun_prompt_dans_csv_"]
         return {
-            "required": {
-                "text": ("STRING", {"forceInput": True}),
+                "required": {
+                "text": ("STRING", {
+                "multiline": True,
+                "default": "",
+                "placeholder": "Entrez votre texte ici ou connectez un input"
+}),
                 "prompt_style": (style_list, {"default": style_list[0]}),
                 "model_name": ("STRING", {"default": "qwen3:2b"}),
                 "ollama_url": ("STRING", {"default": "http://localhost:11434"}),
